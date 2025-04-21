@@ -4,8 +4,8 @@
 name: FCT Bot
 
 on:
-  schedule: # UTC+9 기준 11시 50분 실행
-    - cron:  "52 15 * * *"
+  schedule: # UTC+9 기준 11시 42분(+7~8분) 실행
+    - cron:  "42 14 * * *"
 
 jobs:
   message:
@@ -15,4 +15,4 @@ jobs:
       uses: tsickert/discord-webhook@v5.3.0
       with:
         webhook-url: ${{ secrets.FCT }}
-        content: "/tts FC Time Bitches"
+        content: " It's FC time, Bitches. "
