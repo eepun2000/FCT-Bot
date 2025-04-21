@@ -1,0 +1,18 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: FCT Bot
+
+on:
+  schedule: # UTC+9 기준 11시 50분 실행
+    - cron:  "49 14 * * *"
+
+jobs:
+  message:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord Webhook Action
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ https://discord.com/api/webhooks/1363898634025832691/sUYXXDnUBz2RxNiZ55LpjQ741_BCfY7Y-E6gvjBsb0o-Q9ly6CMDdbQlgfzJZtLxFlUb }}
+        content: "/tts FC Time Bitches"
