@@ -1,0 +1,18 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: PUBG Bot
+
+on:
+  schedule: # UTC+9 기준 11시 42분(+7~8분) 실행
+    - cron:  "53 1 * * *"
+
+jobs:
+  message:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord Webhook Action
+      uses: tsickert/discord-webhook@v5.3.0
+      with:
+        webhook-url: ${{ secrets.FCT }}
+        content: " It's PUBG time, Assholes. "
