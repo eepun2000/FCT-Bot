@@ -5,7 +5,7 @@ name: PUBG Bot
 
 on:
   schedule: # UTC+9 기준 11시 42분(+7~8분) 실행
-    - cron:  "53 0 * * *"
+    - cron:  "0 0 * * *"
 
 jobs:
   message:
